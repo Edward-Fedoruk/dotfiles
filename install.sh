@@ -1,4 +1,3 @@
-
 brew_install() {
     echo "\nInstalling $1"
     if brew list $1 &>/dev/null; then
@@ -8,10 +7,18 @@ brew_install() {
     fi
 }
 
+brew_install "stow"
+
+stow ./
+
 brew_install "neovim"
 brew_install "nvm"
+
+nvm install node
+
 brew_install "lazygit"
 brew_install "ripgrep"
+brew_install "wezterm@nightly"
 
 echo "\nInstalling omz"
 if [ -e "$HOME/.oh-my-zsh" ]; then
